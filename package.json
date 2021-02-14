@@ -1,0 +1,19 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tbd",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shawnmflanigan/burger.git"
+  },
+  "author": "Shawn Flanigan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shawnmflanigan/burger/issues"
+  },
+  "homepage": "https://github.com/Shawnmflanigan/burger#readme"
+}
