@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Shawnmflanigan/burger/issues"
   },
-  "homepage": "https://github.com/Shawnmflanigan/burger#readme"
+  "homepage": "https://github.com/Shawnmflanigan/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
 }
