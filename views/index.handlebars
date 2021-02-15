@@ -5,14 +5,13 @@
 <ul>
   {{#each burgers}}
   	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Wish: {{this.wish}}</p>
+       <p>Name: {{burger_name}}</p>
   	</li>
   {{/each}}
 </ul>
 
 <div>
-  <form action="/" method="POST">
+  <form action="/api/burgers" method="POST">
   	<textarea type="text" name="burger"></textarea>
 
   	<button type="submit">Submit</button>

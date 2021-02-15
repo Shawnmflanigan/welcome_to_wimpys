@@ -2,13 +2,21 @@
 
 const connection = require("./connection.js");
 
-// mysql methods
+// ORM/ mysql methods
+const orm = {
+    selectAll: function(tableInput, cb) {
+        var queryString = `SELECT * FROM ${tableInput}`;
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            console.log(res);
+            cb(res);
+        })
+    }
+}; 
 
-selectAll ();
+// insertOne ();
 
-insertOne ();
-
-updateOne ();
+// updateOne ();
 
 // export
 
