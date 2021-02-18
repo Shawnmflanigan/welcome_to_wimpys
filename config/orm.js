@@ -11,12 +11,26 @@ const orm = {
             console.log(res);
             cb(res);
         })
-    }
-}; 
+    },
 
-// insertOne ();
+    insertOne: function(tableInput, dbObject, cb) {
+        var queryString = `INSERT INTO ${tableInput} SET ?`;
+        connection.query(queryString, dbObject, function(err, res) {
+            if (err) throw err;
+            console.log(res);
+            cb(res);
+            })
+    },
 
-// updateOne ();
+    updateOne: function(tableInput, dbObject, cb) {
+        var queryString = `UPDATE ${tableInput} ?`;
+        connection.query(queryString, dbObject, function(err, res) {
+            if (err) throw err;
+            console.log(res);
+            cb(res);
+            })
+    },    
+    };
 
 // export
 

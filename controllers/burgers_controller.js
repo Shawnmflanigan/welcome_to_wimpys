@@ -13,21 +13,24 @@ router.get("/", function(req, res) {
       var hbsObject = {
         burgers: data
       };
-      console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
 
-  // router.post("/api/burgers", function(req, res) {
-  //   burgers.create([
-  //     "name", "sleepy"
-  //   ], [
-  //     req.body.name, req.body.sleepy
-  //   ], function(result) {
-  //     // Send back the ID of the new quote
-  //     res.json({ id: result.insertId });
-  //   });
-  // });
+  router.post("/api/burgers", function(req, res) {
+    burger.create(
+      req.body, function() {
+      res.redirect("/");
+    });
+  });
+  
+  router.put("/api/burgers/:id", function(req, res) {
+    burger.update({
+      devoured: true
+    }, {id: req.params.id}, function() {
+      res.redirect("/");
+    });
+  });
 
 
 
