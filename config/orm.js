@@ -22,14 +22,14 @@ const orm = {
             })
     },
 
-    updateOne: function(tableInput, dbObject, cb) {
-        var queryString = `UPDATE ${tableInput} ?`;
-        connection.query(queryString, dbObject, function(err, res) {
-            if (err) throw err;
-            console.log(res);
-            cb(res);
-            })
-    },    
+    updateOne: function(tableInput, dbObject, condition, cb) {
+        var queryString = `UPDATE ${tableInput} SET devoured = true WHERE ${condition}`;
+       connection.query(queryString, dbObject, function(err, res) {
+           if (err) throw err;
+           console.log(res);
+           cb(res);
+           })
+   },
     };
 
 // export

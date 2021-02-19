@@ -15,11 +15,12 @@ var burger = {
     },
     
     update: function(objColVals, condition, cb) {
-      orm.updateOne("burgers", objColVals, condition, function(res) {
-        cb(res);
-      });
-    }
-  };
+      var cond = "id=" +condition
+           orm.updateOne("burgers", objColVals, cond, function(res) {
+             cb(res);
+           });
+          }
+        }
   
   // Export the database functions for the controller (burgersController.js).
   module.exports = burger;
