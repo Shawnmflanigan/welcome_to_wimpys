@@ -1,69 +1,77 @@
-<section class="hero is-small has-background-light">
-        <div class="hero-body">
-            <p class="title">
-                EAT THE BURGER!!!
-            </p>
-            <figure class="image is-128x128">
-                <img class="is-rounded"
-                    src="https://static.wikia.nocookie.net/popeye/images/2/26/Wimpy_Ghost_Burgers.gif/revision/latest/scale-to-width-down/500?cb=20160912210053">
-            </figure>
-        </div>
-    </section>
-    <div class="container is-fluid">
-        <div class="columns box">
-            <div class="column box">
-                <h2>Create your burger.</h2>
-                <form class="newBurgerForm">
-                    <div class="form-group row mx-auto">
-                        <div class="col-sm-2">
-                            <label for="newBurgerName" class="col-form-label">Burger Name</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="newBurgerName" placeholder="Enter a new burger name here!">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row mx-auto">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Enter a new burger!</button>
-                        </div>
-                    </div>
-                    <br>
-                </form>
-            </div>
-            <div class="column box">
-                <h2 id="ready"></h2>I will gladly pay you tuesday...</h2>
-                <div class="container">
-                    <ul>
-                        {{#each burgers}}
-                            {{#unless devoured}}
-                                <li id="burgerList">
-                                    {{burger_name}}
-                                    <button type="button" class="change-status btn btn-warning btn-sm" data-id="{{id}}">DEVOUR IT!</button>
-                                </li>
-                                <br>
-                            {{/unless}}
-                        {{/each}}
-                    </ul>
-                </div>
-            
-            </div>
-            <div class="column box">
-                <h2 id="devoured"> ...for a hamburger today!</h2>
-                <div class="container">
-                    <ul>
-                        {{#each burgers}}
-                            {{#if devoured}}
-                                <li>
-                                    {{burger_name}}
-                                </li>
-                                <br>
-                            {{/if}}
-                        {{/each}}
-                    </ul>
-                </div>
+<section class="hero is-small has-background-grey">
+    <div class="hero-body">
+        <p class="title">
+            Wimpy's Burger Platter
+        </p>
+        <figure class="image is-128x128">
+            <img class="is-rounded" src="https://i.pinimg.com/originals/a5/3e/34/a53e34f19a5189bfe478268609390dea.gif" > 
+        </figure>
+    </div>
+</section>
 
+<div class="container is-fluid mt-6">
+
+    <div class="columns box has-background-grey">
+        <div class="column box mr-4 has-background-grey-light">
+            <h2>Create your burger.</h2>
+            <br>
+            <form class="newBurgerForm">
+                <div class="form-group row mx-auto">
+                    <div class="col-sm-2">
+                        <label for="newBurgerName" class="col-form-label">Burger Name</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="newBurgerName"
+                            placeholder="Enter a new burger name here!">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row mx-auto">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Enter a new burger!</button>
+                    </div>
+                </div>
+                <br>
+            </form>
+        </div>
+        
+        <div class="column box mr-4 has-background-grey-light">
+            <h2 id="ready">Burgers to Eat!.</h2>
+            <br>
+            <div class="container">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li id="burgerList">
+                        {{burger_name}}
+                        <button type="button" class="change-status btn btn-warning btn-sm" data-id="{{id}}">DEVOUR
+                            IT!</button>
+                    </li>
+                    <br>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
             </div>
+
+        </div>
+        
+        <div class="column box mb-5 has-background-grey-light">
+            <h2 id="devoured"> Burgers Devoured!</h2>
+            <br>
+            <div class="container">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                    </li>
+                    <br>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+
         </div>
     </div>
+</div>
 </body>
