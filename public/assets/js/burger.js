@@ -18,7 +18,7 @@ $(function() {
         }).then(
             function() {
                 console.log("Changed burger status to ", newBurgerState.devoured);
-                location.reload();
+                window.location.reload();
             }
         )
     })

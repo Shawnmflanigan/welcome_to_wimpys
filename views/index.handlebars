@@ -1,23 +1,38 @@
-<nav class="navbar navbar-light bg-warning">
-  <span class="navbar-brand mb-0 h1">Eat Da Burgers!</span>
-</nav>
-
-<br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 border border-dark border-3 mx-auto burgerPic">
-            <img src="/assets/img/burger.png" alt="cheeseburger">
+<section class="hero is-small has-background-light">
+        <div class="hero-body">
+            <p class="title">
+                EAT THE BURGER!!!
+            </p>
+            <figure class="image is-128x128">
+                <img class="is-rounded"
+                    src="https://static.wikia.nocookie.net/popeye/images/2/26/Wimpy_Ghost_Burgers.gif/revision/latest/scale-to-width-down/500?cb=20160912210053">
+            </figure>
         </div>
-    </div>
-</div>
-
-<div class="container-lg">
-    <br>
-    <div class="container mx-auto burgersContainer">
-        <div class="row mx-auto">
-            <div class="col-md-4 border border-dark border-3 mx-auto ready mt-0">
-                <h2 id="ready">Burgers: Ready To Eat!</h2>
+    </section>
+    <div class="container is-fluid">
+        <div class="columns box">
+            <div class="column box">
+                <h2>Create your burger.</h2>
+                <form class="newBurgerForm">
+                    <div class="form-group row mx-auto">
+                        <div class="col-sm-2">
+                            <label for="newBurgerName" class="col-form-label">Burger Name</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="newBurgerName" placeholder="Enter a new burger name here!">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row mx-auto">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Enter a new burger!</button>
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <div class="column box">
+                <h2 id="ready"></h2>I will gladly pay you tuesday...</h2>
                 <div class="container">
                     <ul>
                         {{#each burgers}}
@@ -31,9 +46,10 @@
                         {{/each}}
                     </ul>
                 </div>
+            
             </div>
-            <div class="col-md-4 border border-dark border-3 mx-auto devoured mt-0">
-                <h2 id="devoured">Burgers: Devoured!</h2>
+            <div class="column box">
+                <h2 id="devoured"> ...for a hamburger today!</h2>
                 <div class="container">
                     <ul>
                         {{#each burgers}}
@@ -46,36 +62,8 @@
                         {{/each}}
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
-    
-    <br>
-    <br>
-    
-    <div class="col-md-10 border border-dark border-3 new">
-        <div class="row mx-auto">
-            <h2>Add a Burger!</h2>
-        </div>
-        <br>
-        <form class="newBurgerForm">
-            <div class="form-group row mx-auto">
-                <div class="col-sm-2">
-                    <label for="newBurgerName" class="col-form-label">Burger Name</label>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="newBurgerName" placeholder="Enter a new burger name here!">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row mx-auto">
-                <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Enter a new burger!</button>
-                </div>
-            </div>
-            <br>
-        </form>
-    </div>
-    <br>
-    <br>
-</div>
+</body>
